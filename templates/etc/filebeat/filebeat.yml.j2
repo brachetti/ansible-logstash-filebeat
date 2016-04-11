@@ -54,10 +54,11 @@ output:
 {%   endif %}
 {% endfor %}
 
+
   ### Logstash as output
-  #logstash:
+  logstash:
     # The Logstash hosts
-    #hosts: ["localhost:5044"]
+    hosts: ["{{ es_filebeat_logstash_host }}"]
 
     # Number of workers per Logstash host.
     #worker: 1

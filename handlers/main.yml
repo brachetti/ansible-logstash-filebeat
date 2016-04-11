@@ -1,5 +1,5 @@
 ---
-# handlers file for ansible-es-filebeat
+# handlers file for ansible-logstash-filebeat
 - name: restart filebeat
   service:
     name: filebeat

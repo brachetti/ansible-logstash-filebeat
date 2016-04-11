@@ -37,6 +37,6 @@
     - pri_domain_name: vagrant.local
   roles:
     - ansible-apache2
-    - ansible-es-filebeat
+    - ansible-logstash-filebeat
     - ansible-mysql
   tasks:

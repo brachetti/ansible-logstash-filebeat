@@ -1,8 +1,9 @@
 ---
-# defaults file for ansible-es-filebeat
+# defaults file for ansible-logstash-filebeat
 es_filebeat_debian_dl: 'https://download.elastic.co/beats/filebeat/{{ es_filebeat_debian_package }}'
 es_filebeat_debian_package: 'filebeat_{{ es_filebeat_version }}_amd64.deb'
 es_filebeat_elasticsearch_host: 'es.{{ pri_domain_name }}:9200'
+es_filebeat_logstash_host: 'log.{{ pri_domain_name }}:5044'
 es_filebeat_idle_timeout: '5s'
 es_filebeat_outputs:
   - name: elasticsearch

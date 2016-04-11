@@ -10,4 +10,4 @@
     - restart filebeat
 
 - name: config_filebeat | loading filebeat ES Index Template
-  command: "curl -XPUT 'http://{{ es_filebeat_elasticsearch_host }}/_template/filebeat?pretty' -d@/etc/filebeat/filebeat.template.json"
+  command: "curl -XPUT 'http://{{ es_filebeat_logstash_host }}/_template/filebeat?pretty' -d@/etc/filebeat/filebeat.template.json"

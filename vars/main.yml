@@ -1,2 +1,2 @@
 ---
-# vars file for ansible-es-filebeat
+# vars file for ansible-logstash-filebeat

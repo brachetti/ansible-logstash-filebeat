@@ -1,7 +1,9 @@
 Role Name
 =========
 
-Installs and configured Elastic filebeat (https://www.elastic.co/products/beats/filebeat)
+Installs and configured Elastic filebeat (https://www.elastic.co/products/beats/filebeat).
+
+This role is based upon the fantastic mrlsmithjr.ansible-es-filebeat, it just sends the data to logstash instead of elasticsearch.
 
 Requirements
 ------------
@@ -24,10 +26,11 @@ Role Variables
 
 ````
 ---
-# defaults file for ansible-es-filebeat
+# defaults file for ansible-logstash-filebeat
 es_filebeat_debian_dl: 'https://download.elastic.co/beats/filebeat/{{ es_filebeat_debian_package }}'
 es_filebeat_debian_package: 'filebeat_{{ es_filebeat_version }}_amd64.deb'
 es_filebeat_elasticsearch_host: 'es.{{ pri_domain_name }}:9200'
+es_filebeat_logstash_host: 'log.{{ pri_domain_name }}:10514'
 es_filebeat_idle_timeout: '5s'
 es_filebeat_outputs:
   - name: elasticsearch
@@ -65,7 +68,7 @@ Example Playbook
   become: true
   vars:
   roles:
-    - role: ansible-es-filebeat
+    - role: ansible-logstash-filebeat
   tasks:
 ````
 #### Galaxy
@@ -74,7 +77,7 @@ Example Playbook
   become: true
   vars:
   roles:
-    - role: mrlesmithjr.filebeat
+    - role: brachetti.filebeat
   tasks:
 ````
 
